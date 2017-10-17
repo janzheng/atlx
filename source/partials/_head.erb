@@ -14,7 +14,7 @@
   <!-- Use the title from a page's frontmatter if it has one -->
   <!-- <title><%= current_page.data.title || "Middleman" %></title> -->
 
-  <link rel="icon" type="image/png" href=<%= source + "images/me.png" %> >
+  <link rel="icon" type="image/png" href=<%= source + "images/a.png" %> >
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
@@ -24,17 +24,19 @@
   <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
 
   <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
-  <!-- 
-  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet"> -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700" rel="stylesheet"> -->
 
-  <!-- because middleman is too dumb- for build -->
   <script src= <%= source + "javascripts/jquery.min.js" %> ></script>
-  <script src= <%= source + "./javascripts/site.js?=v0.259" %>></script>
+  <script src= <%= source + "./javascripts/site.js" %>></script>
   <link href= <%= source + "./javascripts/owl/assets/owl.carousel.min.css" %> rel="stylesheet">
   <script src= <%= source + "./javascripts/owl/owl.carousel.min.js" %>></script>
   <link href= <%= source + "./javascripts/owl/assets/owl.theme.default.min.css" %> rel="stylesheet">
-  <link href= <%= source + "./stylesheets/site.css?=v0.742" %> rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <!-- headline font (no google font) -->
+  <link href= <%= source + "./files/font_headline/stylesheet.css" %> rel="stylesheet">
+  <link href= <%= source + "./stylesheets/site.css" %> rel="stylesheet">
 
 
 

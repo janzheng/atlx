@@ -77,6 +77,13 @@
 
 ///////////////////////////////// site styles
 
+.index-date {
+  font-size: 90px;
+}
+.index-spicy {
+  padding: $base*4;
+  font-size: $base*2;
+}
 
 body {
   width: 100%;
@@ -108,31 +115,31 @@ section, ._section {
 
 // fancy trendy fat links
 
-a {
-  position: relative;
-  border: 0;
-  @extend %ease;
-  &:before {
-    content: ' ';
-    // display: block;
-    padding: 0;
-    background: rgba($color-active,0.12);
-    width: 0%;
-    position: absolute;
-    height: 8px;
-    bottom: 0;
-    @extend %ease;
-  }
-  &:hover:before {
-    width: 100%;
-    @extend %ease;
-  }
-}
+// a {
+//   position: relative;
+//   border: 0;
+//   @extend %ease;
+//   &:before {
+//     content: ' ';
+//     // display: block;
+//     padding: 0;
+//     background: rgba($color-active,0.12);
+//     width: 0%;
+//     position: absolute;
+//     height: 8px;
+//     bottom: 0;
+//     @extend %ease;
+//   }
+//   &:hover:before {
+//     width: 100%;
+//     @extend %ease;
+//   }
+// }
 
-// body links
-._main div a {
-  color: $color-active;
-}
+// // body links
+// ._main div a {
+//   color: $color-active;
+// }
 
 p { // p reset
   padding-bottom: $base*2;
@@ -300,7 +307,7 @@ p { // p reset
 
 
 // 
-@import 'nav';
+// @import 'nav';
 @import 'typography';
 
 @import 'contact';

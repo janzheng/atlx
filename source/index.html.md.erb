@@ -1,57 +1,35 @@
 ---
-layout: main
+layout: landing
 ---
 
-<div class="index _width-content-max" id="landing" markdown="1">
+<div class="index _center _margin-center  _width-content-max" id="landing" markdown="1">
 
 
-  <div class="index-intro _padding-2">
+  <div class="index-intro">
 
-    <div class="_size-vheight" data-vheight="30">
-      <h2 class="_page-header">products <span class="_ampersand">&amp;</span> prototypes </h2>
-
-      <div class="index-intro-sub _padding-bottom-2">
-        user experience, info architecture, strategy, design, and development
+    <div class="_align-vertically _size-vheight" data-vheight="50">
+      <div class="_logo">
+        <%= partial '/partials/logo' %>
       </div>
     </div>
 
-    <div class="_size-vheight" data-vheight="50">
-      <p class="index-intro-message _padding-top-2">
-        Hello! My name’s <a class="index-jan _pointer">Jan<span class="_hidden">&mdash;yawn. it’s Swedish&mdash;</span></a> and I love to make complicated things simple. I <a class="index-exp _pointer">design and build products and prototypes<span class="_hidden">&mdash;subjectively fun and functional digital experiences&mdash;</span></a> for <a class="index-s _pointer"> people<span class="_hidden"> who like things that feel good and work well and are not frustrating</span></a>. <span class="_font-small"><a href="./about.html">read  more about me</a> or <a href="#contact">say hello!</a></span>
-        <!-- <div class="_color-gray _font-small">
-          <em>based in Atlanta </em>
-        </div> -->
 
-      </p>
+    <div class="_align-vertically _size-vheight" data-vheight="50">
+      <h2 class="index-date _font-headline">06.01.2018</h2>
+
+      <h2 class="index-intro _font-headline">SAVE THE DATE.</h2>
+
+      <div class="_fb">
+        <a target="_blank" href="https://www.facebook.com/events/123898051592997/">facebook</a></div>
+
+      <div class="index-spicy _font-cursive">Spicy &amp; Delicious.
+      </div>
     </div>
 
-    <div class="_size-vheight" data-vheight="90">
-      <%= partial '/partials/portfolio' %>
-    </div>
+
 
   </div>
 
 
 </div>
-
-<script>
-  // for fun
-
-  $('.index-jan').on('click', function() {
-    $(this).find('._hidden').removeClass('_hidden'); 
-    $(this).replaceWith($('<span class="_color-red">' + this.innerHTML + '</span>')); // not clickable anymore
-  });
-
-  $('.index-exp').on('click', function() {
-    $(this).find('._hidden').removeClass('_hidden');
-    $(this).replaceWith($('<span class="_color-red">' + this.innerHTML + '</span>')); // not clickable anymore
-  });
-
-  $('.index-s').on('click', function() {
-    $(this).find('._hidden').removeClass('_hidden');
-    $(this).replaceWith($('<span class="_color-red">' + this.innerHTML + '</span>')); // not clickable anymore
-  });
-
-</script>
-
 

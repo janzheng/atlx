@@ -2,15 +2,26 @@
 // Typography
 
 %font-sans {
-  font-family: -apple-system, BlinkMacSystemFont, system-ui, "Lato", "Segoe UI", "Encode Sans", "Open Sans", "Oxygen-Sans", Helvetica, arial, sans-serif;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, system-ui, "Lato", "Segoe UI", "Encode Sans", "Open Sans", "Oxygen-Sans", Helvetica, arial, sans-serif;
 }
 
 %font-serif {
-  font-family: "Georgia", "Crimson Text", serif !important;
+  font-family: "Georgia", "Crimson Text", serif;
 }
 
 %font-display {
   // font-family: "Georgia", helvetica, arial, sans-serif;
+  @extend %font-serif;
+}
+
+
+
+// special for atlx 2018
+%font-headline, ._font-headline {
+  font-family: "Headline One", sans-serif;
+}
+%font-cursive, ._font-cursive {
+  font-family: "Damion", serif-serif;
   @extend %font-serif;
 }
 
@@ -22,7 +33,7 @@
   line-height: 31px; // ($base + 3px) * 1.5;
   font-weight: 400;
   color: $color-copy;
-  @extend %font-serif;
+  @extend %font-sans;
 }
 
 %font-body-small {
@@ -30,7 +41,7 @@
   line-height: ($base - 2px) * 1.5;
   font-weight: 400;
   color: $color-copy;
-  @extend %font-serif;
+  @extend %font-sans;
 }
 
 // typography reset
