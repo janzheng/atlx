@@ -1,0 +1,41 @@
+
+
+
+
+// stylecoeur base
+// using symlink creates a circular reference in middleman
+// @import 'stylecoeur/index.scss'; // symlink include
+@import '../../styles/index.scss'; // regular include
+
+
+
+// local styles (for the guide itself)
+
+._main, ._styleguide-main {
+  // @extend %grid-one-three;
+}
+
+
+// 
+// landing page
+// 
+._intro {
+  
+  h1 {
+    margin: 0;
+  }
+  button {
+    margin: 4vh 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
