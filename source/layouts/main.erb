@@ -1,14 +1,22 @@
-
 <!doctype html>
 <html>
   <head>
-    <title>_stylecoeur</title>
+    <title>jz: products &amp; prototypes</title>
     <%= partial '/partials/head' %>
   </head>
   <body class="">
 
+    <%= partial '/partials/topper' %>
+
+    <%= partial '/partials/nav' %>
+
     <div class="_main">
       <%= yield %>
+      
+      <%= partial '/partials/generator' %>
+
+      <%= partial '/partials/contact' %>
+      <%= partial '/partials/footer' %>
     </div>
 
   </body>

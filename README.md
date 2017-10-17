@@ -1,83 +1,48 @@
 
+# Jan’s Portfolio
 
+This is the Middleman rebuild of the old jekyll version, which can be found in the `/old` branch of this repo.
 
-# stylecoeur
+## Getting Started 
 
-Core extensible collection of useful SCSS modules. Not a framework, just a bunch of loose concepts, ideas, and useful SCSS tied together. Like duct tape.
+This project is written in a combination of ERB (Ruby on Rails templating code), Kramdown (variant of Markdown), and HTML, supported by my own custom, experimental SCSS "framework" I call Stylecoeur that I put together to increase my productivity. 
 
-For quick design and prototyping iterations.
+Note: The site uses the mostly-supported CSS Grids, but may require fallbacks for much older browsers, which have not been written. Oh well!
 
-This shortcut is not a replacement for creativity.
-
-
-
-
-
-## Overview
-
-### What is this?
-
-If you have a ton of projects that use very similar styles, why reinvent the wheel? Create a reusable collection of SCSS modules (you can loosely call it a 'framework') to save yourself some time. This is NOT a framework. It's a collection of useful modules, and a starting point for you to build out your own framework.
-
-The idea is to centralize all your styles to reduce the amount of work. This will also help you standardize naming conventions. I prefer my own simplified version of BEM syntax: [http://getbem.com/introduction/](http://getbem.com/introduction/)
-
-Each project will import stylecoeur using symlink, then implement its own local styles on top of the core.
+The content here is generated from [https://github.com/janzheng/janzheng](https://github.com/janzheng/janzheng) but actually deploys to [https://github.com/janzheng/janzheng.github.io](https://github.com/janzheng/janzheng.github.io) as the root site. The root site is awkward in that all pages have to exist in the base folder at the `master` branch. Super annoying. So this source deploys to that destination.
 
 
 
+## Installation
 
-### Using this resource
+I'm using [Middleman](https://middlemanapp.com), a Rails-based static-site generator to build and preview the example files. If you've never used Rails, don't fret—I hadn't really either until I found Middleman. It's super simple to set up.
 
-Use it out of the box (I'm using it for all my projects) or add/remove whatever you want. Clone this project into a folder, and create a symlink to this folder in your SCSS folder. I prefer creating a symlinked / aliased external 'stylecoeur' folder where you can then cherry-pick whatever components you'd like to include. Don't forget that @importing a folder in SCSS automatically imports the index.scss file, if one exists. NOTE: right-click to create an alias doesn't always work. Use the CLI instead
+Install [Ruby](https://www.ruby-lang.org/en/downloads/) if you don't have it, then follow the Middleman installation steps on their website to get it running.
 
-Using the command-line interface, go to your new project's SCSS folder, then:
+After Middleman is installed, go to the directory:
 
-Creating a symlink file: ```ln -s ~/path/to/stylecoeur_folder/styles/index.scss _stylecoeur.scss```
-
-Note how the name is changed to ```_stylecoeur.scss``` to conform to SCSS naming standards, but it doesn't really matter.
-
-Creating a symlink folder in CLI. Navigate to the project's stylesheet folder: 
-
-~~~ 
-ln -s ~/path/to/styles/stylecoeur_folder stylecoeur
-  ln -s /Users/janzheng/Desktop/projects/stylecoeur/styles stylecoeur
-~~~
-
-
-I prefer the latter option, because you can now import the folder as a whole:
-```@import 'stylecoeur/stylecoeur.scss';```
-
-or pick specific compontents ```@import 'stylecoeur/components/form';```
-
-(Symlinks are simpler than using an npm module, since not all projects might even use npm or such)
-
-
-
-### Middleman Styleguide
-
-The documentation is written in a combination of ERB, Kramdown (variant of Markdown), and HTML, supported by SCSS.
-Go to the source/ folder and use the following commands. Note that the source example uses a symlink itself.
+Launching the deliverable:
 
 ~~~
-bundle exec middleman server
+  bundle exec middleman server -- port 1133
 ~~~
 
 then preview on `http://localhost:4567`
 
 
-Compiling the example:
+Compiling the deliverable:
 
 ~~~
-bundle exec middleman build
+  bundle exec middleman build --clean
 ~~~
 
-If you want to deploy Middleman as a straight-up site, you can do that for free on Github.
+If you want to deploy Middleman as a straight-up site, you can do that for free on Github. Understand that Github is a simple static server with no server side abilities, or even https.
 
 Deploying to Github uses [middleman deploy](https://github.com/middleman-contrib/middleman-deploy):
 
 ~~~
-  bundle exec middleman build [--clean]
-  bundle exec middleman deploy [--build-before]
+  bundle exec middleman build --clean
+  bundle exec middleman deploy --build-before
 ~~~
 
 `config.rb` file:
@@ -92,181 +57,22 @@ activate :deploy do |deploy|
 end
 ~~~
 
+Note to self: do NOT deploy to 'master'—that has a nasty side-effect of deleting everything. Oops.
+
+Github may start aggressively caching your files, which makes deployment difficult as newer files won't show up. Use the built-in asset cache buster to get around this problem:
+
+~~~
+activate :asset_hash
+~~~
 
 
 
 
+## License and Use
 
-### Todos
-
-THINGS TO BRING IN
-
-- All products need to STAY SEMANTIC
-  - stylecoeur bem rules
-
-
-- decatursmiles
-  - rando generator example
-  - google forms gen + honeypot
-    - js validator version -one of these is from circusshannon
-    - simple version
-  - google maps configurable drop-in widget
-  - smooth scroll (+ circus shannon?)
-    - extensible, better widget w/ versioning
-  - scrollmagic example + embedded code
-  - sticky nav example + embedded code
-
-- webexperts
-  - LOTS of components
-  - scroller
-
-- circusshannon
-  - lity
-  - componentize the gallery view 
-  - ruby comments:
-
-      <% 
-      =begin %>
-        content
-      <% 
-      =end %>
-
-- janzheng
-  - vsize calculator
-  - rss feed inserter / generalize it w/ input, callback, etc.
-  - portfolio cards look cool esp w/ background effect
-  - clean up and standardize buttons
-  - 
-
-- popmenu
-  - autohide side menu
-
-
-- ALL PROJECTS NEED TO HAVE CHANGELOG / FEATURE LOGS 
-
-
-- code parity w/ stylecoeur
-  - copy code over, DO NOT SYMLINK
-
-- stylecoeur changelog
-  - every little thing needs to be changelogged after everything brought in
-  - w/ versioning
-
-
-Code Embed: 
-  - like ux.mailchimp, have an embedded code window w/ max-height
-  - proper code rendering
-  - codepen examples?
+This project is filed under an MIT license. Attribution/a nod to the source would be nice in your readme file but doesn't really matter. Have fun adapting it to your own needs
 
 
 
-Grids: 
-- look at popular sites and recreate the top 20 popular layouts in grids
-- create a new grids section for all those things, and share it online
-  - mobile and desktop
-- vertical grids w/lineheight, not perfect vgrids
 
-
-Client Onboarding Process:
-- Client acquisition questions
-  - $ / size / etc.
-- contract
-- work orders
-- invoices
-- client notes + tracking
-
-
-Design Process:
-- Content, IA, Branding
-- design goals, business goals, constraints
-- accessibility + usability + human factors
-  - where / how / who are using it
-- track work + thoughts in progress, thoughts, screenshots, and how you got here
-  - esp. w/ test-driven design
-  - inputs + outputs
-- BA-type work
-  - wireframes
-  - business requirements
-  - component inputs + outputs (I/Os)
-
-
-Other ideas to explore:
-- Clearfix
-- Progressive image loading
-- Masonry
-- scroll-fade-in-load effect (wordpress thing)
-- tinyjpg
-- google forms contact hack
-- smooth scroll
-- horizontal + vertical scroll
-- ad block detect?
-- menu: open, hiden, transition: https://www.skinn.be/en/work/salt
-- menu slide down to hide; slide up to show: https://www.skinn.be/en/work/salt
-- microservices and express api hookup
-- page transition techniques
-
--- Vertical Tabs
-
-[home] [design process] [functional] [styleguide] []
-
-- design:
-  - process
-  - requirements
-
-- functional 
-  - implementation
-  - test-driven components
-    - design & development
-    - inputs and outputs
-  - react components
-  - data model
-  - api
-
-- github update trick adding version: ?=v0.1
-
-- middleman ruby resources for prototyping
-
-- coding style and linting
-
-- tools page
-  - real time board
-  - slack
-  - tinyjpg
-  - svgomg: https://jakearchibald.github.io/svgomg/
-  - barbajs.org: page transitions
-  - google forms email script
-  - fluid typography: https://www.smashingmagazine.com/2016/05/fluid-typography/#controlling-the-rate-of-scale
-  - stripe payments: https://stripe.com/elements
-  - https://transfonter.org/
-
-  on design + typography:
-   - p 98 thinking with type: " style sheets compel designers to think globally and systematically instead of focusing on the fixed construction of a particular surface" - as opposed to 20th century artists and designers who integrated form and content; and "used typography to create texts whose content was inextricable from the concrete" layout of specific letterforms
-   - don't fall into the trap of the modular adaptive system + distancing away from old typography
-   - using js and/or css, getting deviceheight and devicewidth we can understand the limits of the screen
-   - headlines subheads, and such can be precisely set based on the dimensions of the particular screen
-   - responsive design with play with forms, alignment, space and meaning...
-
-
-- adblock detection
-
-- front-matter flags
-  - page.show_footer
-  - page.show_nav
-  - page.transition
-  - etc. applied to the page
-
-- basic react pages, accounts pages, etc. use jststrt as a start
-  - basic user stories and pages!
-  - account, login, signup, password recovery, etc.
-
-
-- stylecoeur for ux prototyping
-  - site and relation map
-  - page layout map / show all the pages, like invision or powerpoint edit mode
-  - https://medium.com/proof-of-concept/growing-free-ux-design-tool-prototype-with-ui-wireframing-and-user-scenarios-f2b0015516ef
-
-
-- functional design page
-  - every project should have its own stylesheet page that includes all the design variations
-  - a much simpler distillation of the "real" styleguide
 

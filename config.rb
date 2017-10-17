@@ -21,11 +21,11 @@ page '/*.txt', layout: false
 
 set :partials_dir, 'partials'
 set :fonts_dir, 'fonts'
+set :css_dir, 'stylesheets'
 
+set :strip_index_file, false
 
-
-
-
+set :build_dir, 'docs' # for github pages master (not for projects)
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
@@ -37,6 +37,21 @@ set :fonts_dir, 'fonts'
 ###
 # Helpers
 ###
+
+# activate :asset_hash # github cache buster
+
+activate :deploy do |deploy|
+  deploy.deploy_method = :git
+  # Optional Settings
+  deploy.remote   = 'https://github.com/janzheng/janzheng.github.io.git' # remote name or git url, default: origin
+  deploy.branch   = 'master' # default: gh-pages
+  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
+  # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
+end
+
+activate :relative_assets
+
+activate :aria_current
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
@@ -106,3 +121,5 @@ configure :build do
   # Minify Javascript on build
   # activate :minify_javascript
 end
+
+
