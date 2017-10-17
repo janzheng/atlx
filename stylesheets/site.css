@@ -2915,6 +2915,10 @@ section, ._section,
 ._width-content-large {
   max-width: 892px; }
 
+@media (max-width: 767px) {
+  ._logo, ._logo * {
+    width: 95%; } }
+
 .index-date {
   font-size: 90px; }
 
