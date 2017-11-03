@@ -1,5 +1,13 @@
 
-# Jan’s Portfolio
+# ATLX 2018 
+
+This is a public repo, but somehow the RSA keeps getting crazy. So you might not be able to clone it, even though it's public, and add your key: `ssh-add ~/.ssh/github_rsa2`
+
+
+
+
+
+
 
 This is the Middleman rebuild of the old jekyll version, which can be found in the `/old` branch of this repo.
 
